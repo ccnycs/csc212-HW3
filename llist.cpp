@@ -1,62 +1,42 @@
+#include "llist.h"
 
+namespace nodespace{
+	
+	void LList::append(const node::value_type& entry){
 
-		// ANSWER BELOW!!!!!!!!
-		// ######################
-		// ######################
-		// ######################
-		// ######################
+	};
+	
+	void LList::insert(std::size_t position, const node::value_type& entry){
 
-		size_t length()
-		// Library facilities used: cstdlib
-		{
-		const node *cursor;
-		size_t answer;
+	};   
 
-		answer = 0;
-		for (cursor = this; cursor != NULL; cursor = cursor->link( ))
-			++answer;
-		
-		return answer;
-		}
+	//find first occurrence
+	const node* LList::search(const node::value_type& target){
 
-		value_type val_at(int ind)
-		{
-			if ( ind >= this->length() ) 
-				return NULL; 
+	};
+	
+	const node* LList::locate(std::size_t position){
 
-			node* cur = this;
-			for ( int i = 0; i < ind; i++ )
-				cur = cur->link_field;
-			return cur->data();			
-		}
+	};
 
-		node* operator[] (size_t ind)
-		{
-			if ( ind >= this->length() ) 
-				return NULL; 
+	//remove by value, remove all
+	bool LList::remove(const node::value_type& target){
 
-			node* cur = this;
-			for ( int i = 0; i < ind; i++ )
-				cur = cur->link_field;
-			return cur;
-		}
+	};
 
-		nodespace::node& operator = (node::value_type i)
-		{
-			set_data(i);
-			return *this;
-		}
+	void LList::clear(){
 
-		std::map<value_type, int> get_frequencies()
-		{
-			std::map<value_type, int> freqs;
-			
-			for( int i = 0; i < length(); i++ )
-			{
-				int count = freqs.count( val_at(i) );
-				std::cout << count << std::endl;
-			}
+	};
 
-			return freqs;
-		}
-		
+	//returns new list
+	LList* LList::copy(){
+
+	};
+
+	//additional functions to index into list
+	node* LList::operator[] (size_t ind){
+
+	};
+
+	std::list<std::tuple<node::value_type, int>> frequency(LList data);
+}

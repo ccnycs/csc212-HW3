@@ -14,14 +14,19 @@
 #include "llist.h"
 
 class NodeTest : public testing::Test{
+  void SetUp(){srand(NULL);}
 };
 
 TEST_F (NodeTest, CheckAssignment){ 
-  nodespace::node A(std::experimental::randint(30, 50), NULL);
+  nodespace::node A(std::experimental::randint(10, 20), NULL);
   nodespace::node::value_type expected = std::experimental::randint(30, 50);
   A = expected;
   ASSERT_EQ(expected, A.data());
 }
+
+class LListTest : public testing::Test{
+
+};
 
 // ------
 int main(int argc, char **argv) {
