@@ -149,11 +149,17 @@ namespace nodespace
 			// Constant member function to retrieve the current data:
 			value_type data( ) const { return data_field; }
 
-			// Two slightly different member functions to retreive
+			// Two slightly different member functions to retrieve
 			// the current link:
 			const node* link( ) const { return link_field; }
 				node* link( )  { return link_field; }
 		
+			//implement the assignment operator
+			nodespace::node& operator = (node::value_type value){
+			set_data(value);
+			return *this;
+			}	
+
 			private:
 			value_type data_field;
 			node* link_field; 
