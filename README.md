@@ -15,7 +15,7 @@ nodespace::node& operator = (value_type value);
  And the function is called as:
  ```c++
  nodespace::node A(2);
- node A = 5;
+ A = 5;
  ```
 
 ## Task 2: Linked List Class
@@ -67,8 +67,8 @@ return `true` if value is removed, `false` if value is not in LList.
 The subscript/indexing operator is used to obtain a modifiable value in the list. It is used as follows:
 ```c++
 LList mylist();
-mylist.insert(1);
-mylist.insert(2);
+mylist.append(1);
+mylist.append(2);
 mylist[0] = 2;
 mylist[-1] = 3;
 std::cout<<mylist[1]<<std::endl;
@@ -89,9 +89,9 @@ std::list<std::tuple<const node::value_type&, int>> frequency(LList data);
 And this is how the function is called:
 ```c++
 LList numbers();
-numbers.insert(2);
-numbers.insert(4);
-numbers.insert(2);
+numbers.append(2);
+numbers.append(4);
+numbers.append(2);
  
 std::list<std::tuple<node::value_type, int> count;
 count = frequency(numbers);
