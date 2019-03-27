@@ -61,7 +61,7 @@ If trying to insert into a non-existent position, this function should throw an 
 If the target or position is not in the list, these functions should return the `NULL` pointer.
 
 ### remove
-return `true` if value is removed, `false` if value is not in LList. 
+return `true` if value is removed, `false` if value is not in LList.
 
 ### node * operator[]
 The subscript/indexing operator is used to obtain a modifiable value in the list. It is used as follows:
