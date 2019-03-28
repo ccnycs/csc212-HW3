@@ -3,26 +3,18 @@
 #include "node.h"
 #include "llist.h"
 
-
-namespace nodespace
-{
-
-    int main()
-    {
-        //node* tail = new node(1.0);
+int main(){
+     //node* tail = new node(1.0);
         //node* second = new node(2.0, tail);
         //node* third = new node(3.0, second);
-        node A = 5;
+        nodespace::node A(2);
+        A = 5;
+        std::cout<<A.data()<<std::endl;
         
-
+        nodespace::LList mylist;
+        mylist.append(4);
+        mylist.clear();
         // Frequency left to implement
 
         return 0;
-    }
-
-}
-
-int main()
-{
-    return nodespace::main();
 }

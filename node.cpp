@@ -27,7 +27,7 @@ namespace nodespace
 	head_ptr = new node(entry, head_ptr);
     }
 
-    void list_insert(node* previous_ptr, const node::value_type& entry) 
+    void list_inser t(node* previous_ptr, const node::value_type& entry) 
     {
 	node *insert_ptr;
     

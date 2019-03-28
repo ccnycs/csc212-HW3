@@ -11,6 +11,11 @@
 namespace nodespace{
     class LList{
 	public:
+        LList(){
+            head_ptr=NULL;
+            tail_ptr=NULL;
+            list_length=0;
+        }
         // functions modified from the linked list toolkit
         std::size_t length(const node* head_ptr){return list_length;}
         
@@ -38,6 +43,7 @@ namespace nodespace{
         node* tail_ptr;
         size_t list_length;
     };
+
 std::list<std::tuple<node::value_type, int>> frequency(LList data);
 }
 #endif

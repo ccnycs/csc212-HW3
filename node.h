@@ -156,6 +156,7 @@ namespace nodespace
 		
 			//implement the assignment operator
 			nodespace::node& operator = (value_type value){
+				this->data_field = value;
 			}	
 
 			private:
