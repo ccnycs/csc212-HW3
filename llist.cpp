@@ -1,42 +1,73 @@
-#include "llist.h"
+#ifndef MAIN_SAVITCH_LIST_H
+#define MAIN_SAVITCH_LIST_H
 
-namespace nodespace{
-	
-	void LList::append(const node::value_type& entry){
+#include <cstdlib> // Provides size_t and NULL
 
-	};
-	
-	void LList::insert(std::size_t position, const node::value_type& entry){
+#include <list>
+#include <tuple>
+#include <iostream>
+#include "node.h"
 
-	};   
+namespace nodespace
+{
+class LList
+{
+public:
 
-	//find first occurrence
-	const node* LList::search(const node::value_type& target){
+    LList()
+    {
+        head_ptr=NULL;
+        tail_ptr=NULL;
+        list_length=0;
+    }
 
-	};
-	
-	const node* LList::locate(std::size_t position){
+    LList(node* head, node* tail, node::value_type siz)
+    {
+        head_ptr = head;
+        head_ptr->set_link(tail);
+        tail_ptr = tail;
+        list_length=siz;
+    }
+    // functions modified from the linked list toolkit
+    std::size_t length(const node* head_ptr)
+    {
+        return list_length;
+    }
+    node* get_head_ptr()
+    {
+        return head_ptr;
+    }
+    node* get_tail_ptr()
+    {
+        return tail_ptr;
+    }
 
-	};
+    //add to end, insert at position P
+    void append(const node::value_type& entry);
+    void insert(std::size_t position, const node::value_type& entry);
 
-	//remove by value, remove all
-	bool LList::remove(const node::value_type& target){
+    //find first occurrence
+    const node* search(const node::value_type& target);
+    const node* locate(std::size_t position);
 
-	};
+    //remove by value, remove all
+    bool remove(const node::value_type& target);
+    void clear();
 
-	void LList::clear(){
+    //returns new list
+    LList* copy();
 
-	};
+    //additional functions to index into list and overwrite node
+    node* operator[] (size_t ind);
+    node& operator = (node::value_type i);
 
-	//returns new list
-	LList* LList::copy(){
+private:
+    node* head_ptr;
+    node* tail_ptr;
+    size_t list_length;
+};
 
-	};
-
-	//additional functions to index into list
-	node* LList::operator[] (size_t ind){
-
-	};
-
-	std::list<std::tuple<node::value_type, int>> frequency(LList data);
+std::list<std::tuple<node::value_type, int>> frequency(LList data);
 }
+#endif
+
